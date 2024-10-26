@@ -16,6 +16,7 @@ describe("Orange HRM Tests", () => {
     dateInputFields: "[placeholder*='yyyy-dd-mm']",
     selectFields: ".oxd-select-text--arrow",
     saveButtons: "[type='submit']",
+    toastMessages: ".oxd-toast-content-text",
   };
 
   const paths = {
@@ -80,6 +81,7 @@ describe("Orange HRM Tests", () => {
       .type(userData.userInfo.birthDate);
     cy.contains("div", "Close").click();
     cy.contains("label", userData.userInfo.gender).click();
-    cy.get(selectorsList.saveButtons).eq(1).click();
+    cy.get(selectorsList.saveButtons).eq(0).click();
+    cy.get(selectorsList.toastMessages).eq(1).contains("Successfully Updated");
   });
 });
