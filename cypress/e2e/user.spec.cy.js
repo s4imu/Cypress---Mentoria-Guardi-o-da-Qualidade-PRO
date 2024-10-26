@@ -9,6 +9,13 @@ describe("Orange HRM Tests", () => {
     alertErrorMessage: ".oxd-alert-content-text",
     dashboardGrid: ".orangehrm-dashboard-grid",
     myInfoButton: "[href='/web/index.php/pim/viewMyDetails']",
+    employeeFirstName: "input[name='firstName']",
+    employeeMiddleName: "input[name='middleName']",
+    employeeLastName: "input[name='lastName']",
+    inputFields: ".oxd-input--active",
+    dateInputFields: "[placeholder*='yyyy-dd-mm']",
+    selectFields: ".oxd-select-text--arrow",
+    saveButtons: "[type='submit']",
   };
 
   const paths = {
@@ -37,5 +44,42 @@ describe("Orange HRM Tests", () => {
     cy.get(selectorsList.loginButton).click();
     cy.location("pathname").should("equal", paths.dashboard);
     cy.get(selectorsList.myInfoButton).click();
+    cy.get(selectorsList.employeeFirstName)
+      .clear()
+      .type(userData.userInfo.firstname);
+    cy.get(selectorsList.employeeMiddleName)
+      .clear()
+      .type(userData.userInfo.middleName);
+    cy.get(selectorsList.employeeLastName)
+      .clear()
+      .type(userData.userInfo.lastName);
+    cy.get(selectorsList.inputFields)
+      .eq(3)
+      .clear()
+      .type(userData.userInfo.employeeId);
+    cy.get(selectorsList.inputFields)
+      .eq(4)
+      .clear()
+      .type(userData.userInfo.otherId);
+    cy.get(selectorsList.inputFields)
+      .eq(5)
+      .clear()
+      .type(userData.userInfo.driverLicenseNumber);
+    cy.get(selectorsList.dateInputFields)
+      .eq(0)
+      .clear()
+      .type(userData.userInfo.driverLicenseExpirateDate);
+    cy.contains("div", "Close").click();
+    cy.get(selectorsList.selectFields).eq(0).click();
+    cy.contains("span", userData.userInfo.nationality).click();
+    cy.get(selectorsList.selectFields).eq(1).click();
+    cy.contains("span", userData.userInfo.maritalStatus).click();
+    cy.get(selectorsList.dateInputFields)
+      .eq(1)
+      .clear()
+      .type(userData.userInfo.birthDate);
+    cy.contains("div", "Close").click();
+    cy.contains("label", userData.userInfo.gender).click();
+    cy.get(selectorsList.saveButtons).eq(1).click();
   });
 });
