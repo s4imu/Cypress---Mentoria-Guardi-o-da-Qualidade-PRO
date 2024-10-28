@@ -5,7 +5,7 @@ export default class MyInfoPage {
       employeeMiddleName: "input[name='middleName']",
       employeeLastName: "input[name='lastName']",
       inputFields: ".oxd-input--active",
-      dateInputFields: "[placeholder*='dd-mm-yyyy']",
+      dateInputFields: "[placeholder*='yyyy']",
       selectFields: ".oxd-select-text--arrow",
       saveButtons: "[type='submit']",
       toastMessages: ".oxd-toast-content-text",
@@ -23,9 +23,10 @@ export default class MyInfoPage {
     birthDate,
     gender
   ) {
-    cy.get(this.selectorsList().employeeFirstName).type(firstName);
-    cy.get(this.selectorsList().employeeMiddleName).type(middleName);
-    cy.get(this.selectorsList().employeeLastName).type(lastName);
+    console.log(lastName);
+    cy.get(this.selectorsList().employeeFirstName).clear().type(firstName);
+    cy.get(this.selectorsList().employeeMiddleName).clear().type(middleName);
+    cy.get(this.selectorsList().employeeLastName).clear().type(lastName);
     cy.get(this.selectorsList().inputFields)
       .eq(5)
       .clear()

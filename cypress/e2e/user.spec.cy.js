@@ -1,27 +1,12 @@
 import userData from "../fixtures/users/userData.json";
 import LoginPage from "../pages/loginPage";
+const Chance = require("chance");
+
+const chance = new Chance();
 
 const loginPage = new LoginPage();
 
-describe("Orange HRM Tests", () => {
-  it("Successful login", () => {
-    loginPage
-      .accessLoginPage()
-      .loginValidCredentials(
-        userData.userSuccess.username,
-        userData.userSuccess.password
-      )
-      .checkDashboardPage();
-  });
-  it("Error login", () => {
-    loginPage
-      .accessLoginPage()
-      .loginInvalidCredentials(
-        userData.userFail.username,
-        userData.userFail.password
-      );
-  });
-
+describe("User Orange HRM Tests", () => {
   it("User info update", () => {
     loginPage
       .accessLoginPage()
@@ -32,9 +17,9 @@ describe("Orange HRM Tests", () => {
       .checkDashboardPage()
       .clickMyInfoButton()
       .fillPersonalInfo(
-        userData.userInfo.firstname,
+        chance.first(),
         userData.userInfo.middleName,
-        userData.userInfo.lastName,
+        chance.last({ nationality: "en" }),
         userData.userInfo.driverLicenseNumber,
         userData.userInfo.driverLicenseExpirateDate,
         userData.userInfo.nationality,

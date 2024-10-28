@@ -14,10 +14,10 @@
     "employeeId": 234588,
     "otherId": 22338,
     "driverLicenseNumber": 12345578,
-    "driverLicenseExpirateDate": "28-02-2026",
+    "driverLicenseExpirateDate": "2026-02-28",
     "nationality": "Brazilian",
     "maritalStatus": "Married",
-    "birthDate": "10-03-2000",
+    "birthDate": "2000-03-10",
     "gender": "Female"
   }
 }
