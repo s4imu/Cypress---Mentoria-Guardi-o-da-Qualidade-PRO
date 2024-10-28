@@ -4,13 +4,27 @@ Quality Guardian Mentorship PRO cypress module repository offered by Lumestack. 
 
 ## Instalation
 
+Clone this repository:
+
+```bash
+git clone https://github.com/s4imu/Cypress---Mentoria-Guardi-o-da-Qualidade-PRO.git
+```
+
+Enter the directory
+
+```bash
+ cd Cypress---Mentoria-Guardi-o-da-Qualidade-PRO/
+```
+
+Install the dependencies
+
 ```bash
 npm install
 ```
 
 > **NOTE**
 >
-> It is necessary to have **Node** installed
+> It is necessary to have [**Node**](https://nodejs.org/en/) installed
 
 ## Running
 
