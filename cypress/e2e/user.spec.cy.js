@@ -10,7 +10,6 @@ const dashboardPage = new DashboardPage();
 
 describe("User Orange HRM Tests", () => {
   beforeEach(() => {
-    cy.log("Executando beforeEach - Login");
     loginPage
       .accessLoginPage()
       .login(userData.userSuccess.username, userData.userSuccess.password);
