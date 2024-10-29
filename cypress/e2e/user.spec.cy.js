@@ -1,19 +1,28 @@
 import userData from "../fixtures/users/userData.json";
+import DashboardPage from "../pages/dashboardPage";
 import LoginPage from "../pages/loginPage";
 const Chance = require("chance");
 
 const chance = new Chance();
 
 const loginPage = new LoginPage();
+const dashboardPage = new DashboardPage();
 
 describe("User Orange HRM Tests", () => {
-  it("User info update", () => {
+  beforeEach(() => {
+    cy.log("Executando beforeEach - Login");
     loginPage
       .accessLoginPage()
-      .loginValidCredentials(
-        userData.userSuccess.username,
-        userData.userSuccess.password
-      )
+      .login(userData.userSuccess.username, userData.userSuccess.password);
+  });
+
+  afterEach(() => {
+    loginPage.logout();
+  });
+
+  it("User info update", () => {
+    cy.log("Executando teste - Atualização de Informações");
+    dashboardPage
       .checkDashboardPage()
       .clickMyInfoButton()
       .fillPersonalInfo(

@@ -1,3 +1,5 @@
+import LoginPage from "./loginPage";
+
 export default class MyInfoPage {
   selectorsList() {
     return {
@@ -59,5 +61,6 @@ export default class MyInfoPage {
     cy.get(this.selectorsList().toastMessages)
       .eq(1)
       .contains("Successfully Updated");
+    return new LoginPage();
   }
 }
