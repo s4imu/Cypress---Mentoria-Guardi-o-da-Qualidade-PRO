@@ -8,5 +8,6 @@ module.exports = defineConfig({
     baseUrl: "https://opensource-demo.orangehrmlive.com/web/index.php",
     viewportWidth: 1920,
     viewportHeight: 1080,
+    defaultCommandTimeout: 10000, // 10 segundos
   },
 });
