@@ -5,7 +5,7 @@ describe('Visualização Pública (Usuário Não Autenticado) - Feature', () => 
     const mainPage = new CypressHeroesMainPage();
 
     beforeEach(() => {
-        mainPage.acessCypressHeroes();
+        mainPage.accessCypressHeroes();
     });
 
     it('TC-PUB-01 Visualizar galeria de heróis', () => {

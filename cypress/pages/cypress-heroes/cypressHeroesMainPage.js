@@ -7,7 +7,7 @@ export default class CypressHeroesMainPage {
         }
     }
 
-    acessCypressHeroes () {
+    accessCypressHeroes () {
         cy.visit('http://localhost:3000/heroes');
     }
 
