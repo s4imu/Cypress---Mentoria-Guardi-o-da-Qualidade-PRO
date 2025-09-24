@@ -35,3 +35,7 @@ npx cypress open
 # Run the automation by command line
 npx cypress run
 ```
+
+## Test suite setup
+
+If it's the first time you'll run the tests you need to run `rwaSetup.spec.cy.js` first
