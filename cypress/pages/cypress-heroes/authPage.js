@@ -1,13 +1,15 @@
 export default class AuthPage {
-    selectorList = {
-        emailInput: '[data-cy="email"]',
-        passwordInput: '[data-cy="password"]',
+    selectorList () {
+        return {
+            emailInput: '[data-cy="email"]',
+            passwordInput: '[data-cy="password"]',
+        }
     }
 
     signIn(username, password) {
         cy.contains('button', 'Login').click();
-        cy.get(this.selectorList.emailInput).type(username);
-        cy.get(this.selectorList.passwordInput).type(password);
+        cy.get(this.selectorList().emailInput).type(username);
+        cy.get(this.selectorList().passwordInput).type(password);
         cy.contains('button', 'Sign in').click();
     }
 

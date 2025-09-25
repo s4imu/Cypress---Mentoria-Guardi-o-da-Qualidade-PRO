@@ -42,4 +42,9 @@ export default class CypressHeroesMainPage {
         }
     }
 
+    findHeroByName (name) {
+        cy.get(this.selectorList().heroCard).contains(name).should('be.visible');
+    }
+
+
 }

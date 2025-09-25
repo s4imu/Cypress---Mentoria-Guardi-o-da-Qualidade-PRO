@@ -39,3 +39,8 @@ npx cypress run
 ## Test suite setup
 
 If it's the first time you'll run the tests you need to run `rwaSetup.spec.cy.js` first
+
+
+## Cypress Heroes
+
+Test cases are in the directory `cypress-heroes-test-reports` inside `suport` directory.
